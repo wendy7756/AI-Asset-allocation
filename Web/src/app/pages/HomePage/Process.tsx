@@ -9,33 +9,14 @@ import { Timeline, Popover } from "antd";
 import styled from "styled-components";
 import CenterContainer from "./CenterContainer";
 import HorizontalTimeline from "react-horizontal-timeline";
+import { LocaleMessage } from "../../internationalization/components";
+import lang from "../../internationalization/LocaleStore/lang";
 
 interface Props {
 
 }
 
-const process = [
-  {name: "注册", description: "花旗银行会员，注册一个网站账户"},
-  {name: "填写风险收益问卷", description: "得出用户的风险收益偏好"},
-  {name: "查看市场行情", description: "在生成一个资产账户前，先了解市场行情"},
-  {name: "创建资产账户", description: "通过四个指标生成一个千人千面的资产配置账户"},
-  {name: "动态调整", description: "根据市场行情，实时动态调整"},
-];
-
-//
-const data = {
-  nodes: process.map((x, i) => ({
-    id: i,
-    name: x.name,
-    description: x.description,
-    // y: 100,
-    // x: (i + 1) * 100,
-  })),
-  edges: range(0, 4).map((x) => ({
-    source: x,
-    target: x + 1,
-  })),
-};
+// Process data is now loaded from internationalization
 
 G6.registerNode("rect", {
   draw(item) {
@@ -178,15 +159,7 @@ interface State {
   index: number;
 }
 
-const dummyDate = process.map((x, i) => `1900-01-0${i + 1}`);
-
-function getLabel(date: string) {
-  const index = Number(date.split("-")[2]) - 1;
-  const p = process[index];
-  return <Popover content={p.description} placement={"bottom"} overlayStyle={{ paddingTop: "24px" }}>
-    {process[index].name}
-  </Popover>;
-}
+// getLabel and dummyDate are now defined inside render method
 
 export default class Process extends React.PureComponent<{}, State> {
 
@@ -203,9 +176,24 @@ export default class Process extends React.PureComponent<{}, State> {
 
   render() {
     const {index} = this.state;
+    const simpleSteps = [
+      {name: "Registration", description: "Citibank member registration for a website account"},
+      {name: "Risk-Return Questionnaire", description: "Determine user's risk-return preferences"},
+      {name: "Market Quotations", description: "Understand market conditions before creating an asset account"},
+      {name: "Create Asset Account", description: "Generate a personalized asset allocation account through four indicators"},
+      {name: "Dynamic Adjustment", description: "Dynamically adjust investment portfolio based on market changes"}
+    ];
+    const dummyDate = simpleSteps.map((x, i) => `1900-01-0${i + 1}`);
+    
+    const getLabel = (date: string, index: number) => {
+      return <Popover content={<p>{simpleSteps[index].description}</p>} placement={"top"}>
+        {simpleSteps[index].name}
+      </Popover>;
+    };
+    
     return <div style={{paddingTop: "20px", paddingBottom: "40px"}}>
-    <BigContainer title={"系统流程"}>
-      <div style={{width: "100%", height: "100px", marginLeft: "auto", marginRight: "auto", maxWidth: "1250px",
+    <BigContainer title={<LocaleMessage id={lang().homePage.process.title}/>}>
+      <div style={{width: "100%", height: "120px", marginLeft: "auto", marginRight: "auto", maxWidth: "1250px", overflow: "visible"
       }}>
 
         <HorizontalTimeline
@@ -222,7 +210,7 @@ export default class Process extends React.PureComponent<{}, State> {
       </div>
       <div className="text-center">
       {/* any arbitrary component can go here */}
-      <p>{process[index].description}</p>
+      <p>{simpleSteps[index].description}</p>
       </div>
     </BigContainer></div>;
   }

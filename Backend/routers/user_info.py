@@ -1,5 +1,5 @@
 from flask import request
-from flask_restplus import Resource, Namespace, fields
+from flask_restx import Resource, Namespace, fields
 from decorator.RoleRequest import login_require
 
 from model.user.User import User

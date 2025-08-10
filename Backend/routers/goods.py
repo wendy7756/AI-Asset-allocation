@@ -1,4 +1,4 @@
-from flask_restplus import Resource, fields, Namespace
+from flask_restx import Resource, fields, Namespace
 import traceback
 
 from factory.BlFactory import goodsBl

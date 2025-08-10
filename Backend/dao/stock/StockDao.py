@@ -10,7 +10,7 @@ from jqdatasdk import *
 class StockDao(object):
     def __init__(self):
         # rq.init()
-        auth('18724008366', 'JoinQuantPass!')
+        # auth('18724008366', 'JoinQuantPass!')  # Commented out for local development
         pass
 
     '''

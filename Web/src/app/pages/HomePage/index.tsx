@@ -8,12 +8,14 @@ import Process from "./Process";
 import background from "../../../assets/background/1.png";
 import { Row, Col, Divider, Button } from "antd";
 import CenterContainer from "./CenterContainer";
-import TeamMembers from "./TeamMembers";
+
 import { UiStore } from "../../stores/UiStore";
 import { Inject } from "react.di";
 import { UserStore } from "../../stores/UserStore";
 import { RouterStore } from "../../routing/RouterStore";
 import { observer } from "mobx-react";
+import { LocaleMessage } from "../../internationalization/components";
+import lang from "../../internationalization/LocaleStore/lang";
 
 interface Props {
 
@@ -62,12 +64,34 @@ const TitleShowcase = styled(CenterContainer)`
 `;
 
 const TitleContent = styled.div`
- 
-  line-height: 48px;
-  //text-align: center;
+  line-height: 1.4;
   
   h1 {
-    font-size: 32px;
+    font-size: 36px;
+    font-family: "Times New Roman", Times, serif !important;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  h2 {
+    font-family: "Times New Roman", Times, serif !important;
+    margin: 0;
+  }
+  
+  h3 {
+    font-family: "Times New Roman", Times, serif !important;
+    margin: 0;
+  }
+  
+  button {
+    font-family: "Times New Roman", Times, serif !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 143, 255, 0.6) !important;
+    }
   }
 `;
 
@@ -87,6 +111,8 @@ export default class HomePage extends React.Component<Props, {}> {
   };
 
   render() {
+    const homePageLang = lang().homePage;
+    
     return <HomePageContainer>
       <BannerContainer>
         <BackgroundContainer>
@@ -101,14 +127,27 @@ export default class HomePage extends React.Component<Props, {}> {
           <Col xs={24} md={12}>
             <TitleShowcase>
               <TitleContent>
-                <h1 style={{ color: "white" }}>A+Quant人工智能资产管理</h1>
-                <h2 style={{ color: "white" }}>专属定制，量化择时</h2>
-                <h2 style={{ color: "white" }}>Democratize AI to empower quant</h2>
-                <Button size={"large"} type={"primary"} onClick={this.onLogin}>
-                  {this.userStore.loggedIn
-                    ? "开始投资"
-                    : "登录以开始投资"
-                  }
+                <h1 style={{ color: "white", marginBottom: "20px" }}>
+                  <LocaleMessage id={homePageLang.title}/>
+                </h1>
+                <h2 style={{ color: "white", fontSize: "20px", fontWeight: "500", marginBottom: "12px" }}>
+                  <LocaleMessage id={homePageLang.subtitle1}/>
+                </h2>
+                <h3 style={{ color: "#b8c8d8", fontSize: "16px", fontWeight: "400", marginBottom: "30px", lineHeight: "1.5" }}>
+                  <LocaleMessage id={homePageLang.subtitle2}/>
+                </h3>
+                <Button size={"large"} type={"primary"} onClick={this.onLogin} style={{ 
+                  fontSize: "16px", 
+                  height: "50px", 
+                  padding: "0 32px", 
+                  borderRadius: "8px",
+                  background: "linear-gradient(135deg, #4f8fff 0%, #1976d2 100%)",
+                  border: "none",
+                  boxShadow: "0 4px 15px rgba(79, 143, 255, 0.4)"
+                }}>
+                  <LocaleMessage id={this.userStore.loggedIn 
+                    ? homePageLang.startButton 
+                    : homePageLang.loginButton}/>
                 </Button>
               </TitleContent>
             </TitleShowcase>
@@ -119,7 +158,6 @@ export default class HomePage extends React.Component<Props, {}> {
 
       <Features/>
       <Process/>
-      <TeamMembers/>
     </HomePageContainer>;
   }
 }

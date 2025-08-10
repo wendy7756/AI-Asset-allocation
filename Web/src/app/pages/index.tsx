@@ -50,7 +50,8 @@ export class App extends React.Component<{}, State> {
 
   async componentDidMount() {
 
-    const currentLanguage = typeof window !== "undefined" && window.navigator.language;
+    // Force English as default language
+    const currentLanguage = "en-US";
 
     // initialize global states here
     await this.localeStore.init(currentLanguage);

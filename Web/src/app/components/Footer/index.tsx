@@ -64,53 +64,41 @@ export default class Footer extends React.Component<FooterProps, any> {
 
     const dataSource = [
       {
-        title: get(root.help.title),
-        content: [
-          get(root.help.usage),
-          get(root.help.about),
-        ],
-        contentLink: [
-          "/help",
-          "/help/about",
-        ],
-      },
-      {
         title: get(root.contact),
         content: [
           "https://zos.alipayobjects.com/rmsportal/AXtqVjTullNabao.svg",
         ],
         contentLink: [
-          "https://github.com/FinBrain",
+          "https://github.com/wendy7756/AI-Asset-allocation",
         ],
       },
     ];
 
-    const liChildrenToRender = dataSource.map(this.getLiChildren);
-    return (<OverPack
-      {...props}
-      playScale={isMobile ? 0.5 : 0.2}
-    >
-
-      <QueueAnim type="bottom" component="ul" key="ul" leaveReverse={true} id={`${props.id}-ul`}>
-        <li key="logo" id={`${props.id}-logo`}>
-          <LogoContainer>
-            <SvgImg filePath={"landscape.svg"} height={50} width={170}/>
-          </LogoContainer>
-          <p><LocaleMessage id={root.productDescription}/></p>
-        </li>
-        {liChildrenToRender}
-      </QueueAnim>
-      <TweenOne
-        animation={{y: "+=30", opacity: 0, type: "from"}}
-        key="copyright"
-        className="copyright"
-        id={`${props.id}-content`}
-      >
-        <span>
-          <LocaleMessage id={root.copyright}/>
-        </span>
-      </TweenOne>
-    </OverPack>
+    return (
+      <div className="footer1" style={{height: '100px', position: 'relative'}}>
+        <div className="copyright" style={{
+          width: '100%',
+          height: '100px',
+          textAlign: 'center',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#2c2c2c'
+        }}>
+          <span style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#999'
+          }}>
+            <LocaleMessage id={root.copyright}/>
+            <a href="https://github.com/wendy7756/AI-Asset-allocation" target="_blank" style={{marginLeft: '10px', opacity: 0.7}}>
+              <img src="https://zos.alipayobjects.com/rmsportal/AXtqVjTullNabao.svg" width="20" height="20" alt="GitHub"/>
+            </a>
+          </span>
+        </div>
+      </div>
     );
   }
 }

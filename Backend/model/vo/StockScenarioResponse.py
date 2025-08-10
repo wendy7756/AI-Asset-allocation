@@ -1,4 +1,4 @@
-from flask_restplus.fields import Raw
+from flask_restx.fields import Raw
 
 from publicdata.MarketState import MarketState
 

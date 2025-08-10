@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from flask import request
-from flask_restplus import Resource, fields, Namespace
+from flask_restx import Resource, fields, Namespace
 
 from dao.RestDao import RestDao
 from decorator.RoleRequest import login_require

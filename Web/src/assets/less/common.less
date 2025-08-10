@@ -1,5 +1,146 @@
 @import 'global';
 
+// Global font setting for English text
+body, html {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+// Override for specific elements that need English font
+h1, h2, h3, h4, h5, h6, p, span, div, button, .ant-btn {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+// Override for third-party components
+.react-horizontal-timeline *, 
+.ant-popover *, 
+.ant-popover-content *,
+.text-center *,
+div[class*="timeline"] *,
+div[style*="position"] * {
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+// Fix timeline container height and text alignment
+.react-horizontal-timeline {
+  height: auto !important;
+  min-height: 100px !important;
+  padding: 15px 0 !important;
+  overflow: visible !important;
+}
+
+// Fix all timeline related containers
+.react-horizontal-timeline > div,
+.react-horizontal-timeline div[style*="height"] {
+  height: auto !important;
+  min-height: 80px !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+// Increase font size for timeline components
+.react-horizontal-timeline .rht-label,
+.react-horizontal-timeline .rht-label *,
+div[style*="position: absolute"] span,
+div[style*="position: absolute"] div,
+.ant-popover-content span,
+.ant-popover-content div {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  padding: 8px 4px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+// More specific timeline selectors
+div[style*="cursor: pointer"] span,
+div[style*="text-align: center"] span {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  padding: 12px 8px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  display: inline-block !important;
+  position: relative !important;
+  top: auto !important;
+  margin-top: 10px !important;
+  box-sizing: border-box !important;
+}
+
+// Force timeline labels to be fully visible
+.react-horizontal-timeline div[style*="position: absolute"] {
+  position: relative !important;
+  top: 20px !important;
+  height: auto !important;
+  min-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+// Timeline description text
+.text-center p {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: #333 !important;
+  margin: 8px 0 !important;
+  padding: 8px 20px !important;
+}
+
+// Timeline line and dot styling
+.react-horizontal-timeline .rht-line {
+  height: 2px !important;
+  background: #e0e0e0 !important;
+}
+
+.react-horizontal-timeline .rht-line-active {
+  height: 2px !important;
+  background: #4190FD !important;
+}
+
+// Timeline dots styling
+.react-horizontal-timeline .rht-dot,
+.react-horizontal-timeline .rht-dot-active {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  border: 2px solid !important;
+  background: white !important;
+}
+
+.react-horizontal-timeline .rht-dot {
+  border-color: #e0e0e0 !important;
+}
+
+.react-horizontal-timeline .rht-dot-active {
+  border-color: #4190FD !important;
+  background: #4190FD !important;
+}
+
+// More specific selectors for timeline elements
+div[style*="border-radius: 50%"] {
+  width: 12px !important;
+  height: 12px !important;
+  border-width: 2px !important;
+}
+
+// Basic height overrides for common timeline line heights
+div[style*="height: 4px"],
+div[style*="height: 6px"],
+div[style*="height: 8px"] {
+  height: 2px !important;
+}
+
+// Keep circle styling
+.react-horizontal-timeline div[style*="border-radius"] {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+// Keep only the basic timeline styling
+
 .content-wrapper > .tween-one-leaving, .queue-anim-leaving {
   position: absolute !important;
   width: 100%;

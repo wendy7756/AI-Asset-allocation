@@ -67,7 +67,7 @@ export default class NewsPage extends React.Component<Props, State> {
         </List.Item>
       )}
             loading={loading}
-            header={<h1>新闻列表 <ClickableIcon type={"reload"} spin={loading} onClick={this.loadData}/></h1>}
+            header={<h1>Financial News <ClickableIcon type={"reload"} spin={loading} onClick={this.loadData}/></h1>}
             pagination={{position: "bottom"}}
       />
     </div>;

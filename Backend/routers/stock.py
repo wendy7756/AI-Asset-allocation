@@ -1,4 +1,4 @@
-from flask_restplus import Resource, Namespace, fields
+from flask_restx import Resource, Namespace, fields
 
 from factory.BlFactory import stockBl
 from model.user.User import User
