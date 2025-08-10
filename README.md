@@ -1,2 +1,17 @@
 # AI-Fintech-Asset-allocation
-An asset allocation system based on artificial intelligence
+
+AI-Fintech is an asset-allocation project based on machine learning and data mining, emerging with the intensive research on quantitative investment research and the increasing demand for financial management by users.
+
+Through analysis, the project obtains the user's expected return and affordable risk, and combines the expected investment period and amount to allocate the user’s assets professionally and personally. Optimized through the Markowitz Model, user’s assets are allocated to the stock, bond, and commodity markets to minimize risk in meeting yield needs, and models are adjusted based on changes in user’s assets and market movements. The stock market adopts Multifactor Model, which dynamically calculates factors’ weight based on market conditions and industry characteristics, and establishes short-term timing strategies in combination with phase indicators to select the best trading opportunities. 
+
+By monitoring the Hindenburg Omen applicable to the A-Share Market and Economic Policy Uncertainty Index, the system can control risk and timely stop loss. The bond market adopts a holding maturity strategy, which uses third-party agency rating and financial statement analysis to avoid credit risk. Finally, it provides customers with personalized ranking according to the valuation data of the Shanghai Clearing House and user’s risk-return preferences, and selects the best bond. Commodity market Based on Time Series Models and DCC-MIDAS model, commodity market obtains the correlation between crude oil futures and spot. Then, it uses factor timing and technical analysis to take profit and stop loss, obtaining the maximum return.
+
+In addition to the privately-tailored asset allocation system, AI-Fintech portrays user portraits based on user preferences and Citibank's API. It uses machine learning algorithms to cluster users with the same investment preferences, and uses the LOF algorithm to eliminate off-group points and optimize clustering results to accurately recommend a portfolio for each user.
+
+AI-Fintech also provides a depth analysis section that uses performance analysis, attribution analysis and scene analysis to quantitatively analysis users' asset allocation and market conditions, and provides professional asset returns and risk assessment analysis to make users intuitively understand product composition and revenue, volatility.
+Using a series of existing frameworks and removing a series of simple repetitive operations, AI-Fintech puts the focus on the processing logic. With humanized operation, visual chart, and all-round service, AI-Fintech provides a zero threshold for ordinary investors, committed to providing users with the most profitable asset allocation, and has sufficient feasibility and broad development prospects.
+
+It is based on the reasonable assumptions and three development goals of personalized service, automation and operability, and perfect market analysis. It grasps the economic and social feasibility brought by the financial technology boom. Supported by asset allocation and machine learning, it can 
+fully exert its technical superiority and team member's competence. It also takes into account the user experience, and strictly abides by laws and regulations, having a strong development momentum.
+
+On the other hand, with the improvement of people's financial needs, team members thoroughly analyze market demand and potential customers, clarify the profit model, and explore new modes of Internet finance in the era of big data to achieve a combination of economic and social benefits. AI-Fintech has excellent prospect.
