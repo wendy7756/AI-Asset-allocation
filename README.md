@@ -1,17 +1,222 @@
-# AI-Fintech-Asset-allocation
+# AI-Fintech Asset Allocation System
 
-AI-Fintech is an asset-allocation project based on machine learning and data mining, emerging with the intensive research on quantitative investment research and the increasing demand for financial management by users.
+English|[中文](README_CN.md)
 
-Through analysis, the project obtains the user's expected return and affordable risk, and combines the expected investment period and amount to allocate the user’s assets professionally and personally. Optimized through the Markowitz Model, user’s assets are allocated to the stock, bond, and commodity markets to minimize risk in meeting yield needs, and models are adjusted based on changes in user’s assets and market movements. The stock market adopts Multifactor Model, which dynamically calculates factors’ weight based on market conditions and industry characteristics, and establishes short-term timing strategies in combination with phase indicators to select the best trading opportunities. 
+## Project Overview
 
-By monitoring the Hindenburg Omen applicable to the A-Share Market and Economic Policy Uncertainty Index, the system can control risk and timely stop loss. The bond market adopts a holding maturity strategy, which uses third-party agency rating and financial statement analysis to avoid credit risk. Finally, it provides customers with personalized ranking according to the valuation data of the Shanghai Clearing House and user’s risk-return preferences, and selects the best bond. Commodity market Based on Time Series Models and DCC-MIDAS model, commodity market obtains the correlation between crude oil futures and spot. Then, it uses factor timing and technical analysis to take profit and stop loss, obtaining the maximum return.
+AI-Fintech is an intelligent asset allocation project based on machine learning and data mining, combining quantitative investment research with user financial management needs to provide professional and personalized asset allocation services.
 
-In addition to the privately-tailored asset allocation system, AI-Fintech portrays user portraits based on user preferences and Citibank's API. It uses machine learning algorithms to cluster users with the same investment preferences, and uses the LOF algorithm to eliminate off-group points and optimize clustering results to accurately recommend a portfolio for each user.
+The system analyzes users' expected returns and risk tolerance, combines investment periods and amounts, and uses the Markowitz model for optimization to allocate user assets to stock, bond, and commodity markets, minimizing risk while meeting yield requirements.
 
-AI-Fintech also provides a depth analysis section that uses performance analysis, attribution analysis and scene analysis to quantitatively analysis users' asset allocation and market conditions, and provides professional asset returns and risk assessment analysis to make users intuitively understand product composition and revenue, volatility.
-Using a series of existing frameworks and removing a series of simple repetitive operations, AI-Fintech puts the focus on the processing logic. With humanized operation, visual chart, and all-round service, AI-Fintech provides a zero threshold for ordinary investors, committed to providing users with the most profitable asset allocation, and has sufficient feasibility and broad development prospects.
+### Key Features
 
-It is based on the reasonable assumptions and three development goals of personalized service, automation and operability, and perfect market analysis. It grasps the economic and social feasibility brought by the financial technology boom. Supported by asset allocation and machine learning, it can 
-fully exert its technical superiority and team member's competence. It also takes into account the user experience, and strictly abides by laws and regulations, having a strong development momentum.
+- **Intelligent Asset Allocation**: Risk-return optimization based on Markowitz model
+- **Multi-factor Model**: Dynamic factor weight calculation for stock market
+- **Risk Control**: Monitoring Hindenburg Omen and Economic Policy Uncertainty Index
+- **Bond Analysis**: Hold-to-maturity strategy with third-party rating and financial analysis
+- **Commodity Futures**: Crude oil futures analysis based on time series and DCC-MIDAS models
+- **User Profiling**: User portraits based on preferences and Citibank API
+- **Deep Analysis**: Performance analysis, attribution analysis, and scenario analysis
 
-On the other hand, with the improvement of people's financial needs, team members thoroughly analyze market demand and potential customers, clarify the profit model, and explore new modes of Internet finance in the era of big data to achieve a combination of economic and social benefits. AI-Fintech has excellent prospect.
+## Technology Stack
+
+### Backend
+- **Framework**: Flask + Flask-RESTplus
+- **Database**: SQLite + SQLAlchemy
+- **Machine Learning**: TensorFlow, Keras, Scikit-learn
+- **Data Processing**: Pandas, NumPy, SciPy
+- **Financial Data**: JQData SDK, Tushare
+- **Optimization**: CVXOPT
+- **Authentication**: PyJWT
+- **API Documentation**: Swagger
+
+### Frontend (Web)
+- **Framework**: React 16.5+
+- **State Management**: MobX
+- **UI Components**: Ant Design
+- **Charts**: BizCharts
+- **Build Tool**: Webpack 4
+- **Language**: TypeScript
+- **Styling**: Less + Styled Components
+
+## Project Structure
+
+```
+AI-Fintech-Asset-allocation/
+├── Backend/                    # Backend service
+│   ├── bl/                    # Business logic layer
+│   │   ├── allocation/        # Asset allocation algorithms
+│   │   ├── bonds/             # Bond analysis
+│   │   ├── goods/             # Commodity analysis
+│   │   ├── stock/             # Stock analysis
+│   │   └── user/              # User management
+│   ├── dao/                   # Data access layer
+│   ├── model/                 # Data models
+│   ├── routers/               # API routes
+│   ├── utils/                 # Utility classes
+│   ├── data/                  # Data files
+│   ├── requirements.txt       # Python dependencies
+│   └── run.py                # Startup file
+├── Web/                       # Frontend application
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── api/          # API services
+│   │   │   ├── components/   # Common components
+│   │   │   ├── pages/        # Page components
+│   │   │   ├── models/       # Data models
+│   │   │   ├── stores/       # State management
+│   │   │   └── layouts/      # Layout components
+│   │   └── assets/           # Static resources
+│   ├── package.json          # Node.js dependencies
+│   └── webpack.config.js     # Webpack configuration
+├── Integration test.pdf       # Integration test documentation
+├── Interface-class test.pdf   # Interface class test documentation
+├── Software Requirements Specification.pdf  # Software requirements specification
+├── software launch manual.pdf  # Software launch manual
+└── README.md                 # Project documentation
+```
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.7+
+- Node.js 10+
+- npm/yarn
+
+### Installation & Running
+
+#### 1. Start Backend Service
+
+```bash
+# Enter Backend directory
+cd Backend
+
+# Install Python dependencies
+pip install -r requirements.txt --user
+
+# Start backend service
+python run.py
+```
+
+The backend service will start at `http://localhost:5000`, API documentation available at `http://localhost:5000/api`.
+
+#### 2. Start Frontend Service
+
+```bash
+# Enter Web directory
+cd Web
+
+# Install Node.js dependencies
+npm install
+
+# Start frontend development server
+npm start
+```
+
+The frontend application will automatically open in the browser, typically at `http://localhost:3000`.
+
+## Feature Modules
+
+### 1. User Management
+- User registration/login
+- Investment preference assessment
+- Citibank account binding
+- User profiling analysis
+
+### 2. Asset Allocation
+- Investment requirement analysis
+- Intelligent asset allocation algorithms
+- Risk-return optimization
+- Allocation scheme recommendations
+
+### 3. Investment Analysis
+- **Stock Analysis**: Multi-factor model, attribute analysis, performance analysis, scenario analysis
+- **Bond Analysis**: Interest rate bonds, credit bonds, duration analysis
+- **Commodity Analysis**: Crude oil futures, correlation analysis, technical analysis
+
+### 4. Portfolio Management
+- Position monitoring
+- Rebalancing alerts
+- Transaction records
+- Return analysis
+
+### 5. Market Data
+- Stock quotes
+- Bond quotes
+- Commodity quotes
+- Financial news
+
+## API Endpoints
+
+The system provides complete RESTful APIs, main modules include:
+
+- `/api/user` - User management
+- `/api/invreq` - Investment requirements
+- `/api/stock` - Stock analysis
+- `/api/bonds` - Bond analysis
+- `/api/goods` - Commodity analysis
+- `/api/quotation` - Market data
+- `/api/notification` - Notifications
+
+For detailed API documentation, visit: `http://localhost:5000/api`
+
+## Data Sources
+
+- **Stock Data**: JQData, Tushare
+- **Bond Data**: Shanghai Clearing House
+- **Commodity Data**: Futures exchanges
+- **Macro Data**: National Bureau of Statistics, Central Bank
+- **News Data**: Financial media APIs
+
+## Core Algorithms
+
+### Asset Allocation Algorithms
+- Markowitz mean-variance model
+- Black-Litterman model
+- Risk parity model
+
+### Stock Selection Algorithms
+- Multi-factor model
+- Dynamic factor weight adjustment
+- Timing strategies
+
+### Risk Control
+- Hindenburg Omen indicator
+- Economic Policy Uncertainty Index
+- VaR risk measurement
+
+### Machine Learning
+- User clustering analysis
+- LOF outlier detection
+- Time series forecasting
+
+## Documentation
+
+For detailed development documentation, please refer to:
+- [Software Requirements Specification](Software%20Requirements%20Specification.pdf)
+- [Software Launch Manual](software%20launch%20manual.pdf)
+- [Integration Test Documentation](Integration%20test.pdf)
+- [Interface Class Test Documentation](Interface-class%20test.pdf)
+
+## License
+
+This project is licensed under the Apache 2.0 License.
+
+## Contributing
+
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
+
+## Contact
+
+For questions or suggestions, please contact us through:
+- Submit an Issue
+- Email the project maintainers
+
+---
+
+**Disclaimer**: This project is for financial technology competition purposes only, intended for learning and research. Please consult professional investment advisors for actual investment decisions.
