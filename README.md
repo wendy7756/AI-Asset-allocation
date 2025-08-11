@@ -2,6 +2,9 @@
 
 English|[中文](README_CN.md)
 
+<img width="2124" height="1086" alt="a+quant" src="https://github.com/user-attachments/assets/5ee87f9e-4106-43a6-9345-b179355765d9" />
+
+
 ## Project Overview
 
 A+Quant is an intelligent asset allocation system powered by artificial intelligence and quantitative analysis. The platform combines advanced machine learning algorithms with comprehensive financial data analysis to provide personalized investment portfolio optimization and precision timing strategies.
