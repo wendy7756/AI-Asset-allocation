@@ -1,6 +1,13 @@
+<div align="center">
+
 # AI-Fintech 智能资产配置系统
 
+<img width="2124" height="1086" alt="a+quant" src="https://github.com/user-attachments/assets/61dd01a6-5ea5-480d-b4b6-f26db9881fcc" />
+
+
 中文 | [English](README.md) 
+
+</div>
 
 ## 项目简介
 
