@@ -1,9 +1,12 @@
+<div align="center">
+  
 # A+Quant AI Asset Management System
-
-English|[中文](README_CN.md)
 
 <img width="2124" height="1086" alt="a+quant" src="https://github.com/user-attachments/assets/5ee87f9e-4106-43a6-9345-b179355765d9" />
 
+English|[中文](README_CN.md)
+
+</div>
 
 ## Project Overview
 
